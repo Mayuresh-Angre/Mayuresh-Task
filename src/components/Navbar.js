@@ -12,9 +12,11 @@ function Navbar() {
 
   <div className="collapse navbar-collapse" id="navbarSupportedContent">
     <ul className="navbar-nav mr-auto">
-    
+    <li  className="nav-item active">
+        <Link to='/' className="nav-link"  >Task-1 <span className="sr-only">(current)</span></Link>
+      </li>
       <li  className="nav-item active">
-        <Link to='/' className="nav-link"  >Task-2A <span className="sr-only">(current)</span></Link>
+        <Link to='/task2a' className="nav-link"  >Task-2A <span className="sr-only">(current)</span></Link>
       </li>
       <li className="nav-item">
         <Link to='/task2b' className="nav-link"  >Task-2B</Link>
