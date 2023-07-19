@@ -18,7 +18,7 @@ function Product({data,setCartArray}) {
                 <div className="card shadow pb-2">
                     <div className="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
                         data-mdb-ripple-color="light">
-                        <img src={URL.createObjectURL(data.image)}
+                        <img src={URL?.createObjectURL(data?.image)}
                             className="w-100"
                             style={{width:"100%",height:"45vh"}} />
                         <a >

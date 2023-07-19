@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 function BuyFormModal({   dataArray, setDataArray, pic, setPic }) {
+  const [error,setError]=useState(false)
   const [data,setData]=useState({
     product:"",
     price:0
@@ -13,13 +14,21 @@ function BuyFormModal({   dataArray, setDataArray, pic, setPic }) {
     setData((pre) => ({ ...pre, [name]: value }))
   }
   const handleImage = (e) => {
-    if(e.target.files && e.target.files.length>0 ){
-      setPic(() => e.target.files[0])
-      // setData((pre)=>({...pre,image:pic}))
+  
+    if(e.target.files[0].size <= 100000 ){
+      if(e.target.files  && e.target.files.length>0 ){
+        setPic(() => e.target.files[0])
+        // setError(false)
+      } 
+    }else{
+      alert("File Size should be less than 100KB")
     }
+    // console.log(e.target.files[0].size)
+    
   }
   const handleSubmit = (e) => {
     e.preventDefault();
+    
     setDataArray((pre) => [...pre, { ...data, id: uuidv4() ,quantity:0}])
     // console.log(pic)
     setData({
@@ -31,7 +40,7 @@ function BuyFormModal({   dataArray, setDataArray, pic, setPic }) {
   return (
     <>
       <div className="text-right">
-        <button type="button" className="btn btn-primary bg-danger text-white mt-4" data-toggle="modal" data-target="#staticBackdrop">
+        <button type="button" className="btn btn-primary bg-danger text-white mt-4 mb-3" data-toggle="modal" data-target="#staticBackdrop">
           Buy Now</button>
       </div>
 
@@ -58,6 +67,7 @@ function BuyFormModal({   dataArray, setDataArray, pic, setPic }) {
                 <div className="form-group">
                   <label htmlFor="image">Image</label>
                   <input onChange={handleImage} type="file" name="image" id="image" className='form-controlpy-1' multiple />
+                  <p className='text-danger'>{error ? "File Size should be less than 100 kb" : null }</p>
                 </div>
                 <div className="">
                   <button type="button" className="btn btn-secondary bg-danger" data-dismiss="modal">Cancel</button>
@@ -65,7 +75,6 @@ function BuyFormModal({   dataArray, setDataArray, pic, setPic }) {
                 </div>
               </form>
             </div>
-
           </div>
         </div>
       </div>
