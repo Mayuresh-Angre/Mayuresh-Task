@@ -31,7 +31,7 @@ function BuyFormModal({   dataArray, setDataArray, pic, setPic }) {
   return (
     <>
       <div className="text-right">
-        <button type="button" className="btn btn-primary bg-danger text-white mt-3" data-toggle="modal" data-target="#staticBackdrop">
+        <button type="button" className="btn btn-primary bg-danger text-white mt-4" data-toggle="modal" data-target="#staticBackdrop">
           Buy Now</button>
       </div>
 
