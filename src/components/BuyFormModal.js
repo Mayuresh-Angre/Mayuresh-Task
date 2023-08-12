@@ -66,7 +66,7 @@ function BuyFormModal({   dataArray, setDataArray, pic, setPic }) {
                 </div>
                 <div className="form-group">
                   <label htmlFor="image">Image</label>
-                  <input onChange={handleImage} type="file" name="image" id="image" className='form-controlpy-1' multiple />
+                  <input onChange={handleImage} type="file" name="image" id="image" className='form-controlpy-1' multiple required/>
                   <p className='text-danger'>{error ? "File Size should be less than 100 kb" : null }</p>
                 </div>
                 <div className="">
