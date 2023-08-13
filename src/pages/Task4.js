@@ -9,8 +9,8 @@ function Task4() {
     const dispatch = useDispatch()
     const task4Data = useSelector((state) => state.task4.task4)
     const [box, setBox] = useState({
-        box1: 0,
-        box2: 0
+        box1: "",
+        box2: ""
     })
     const handleChange = (e) => {
         const { name, value } = e.target;

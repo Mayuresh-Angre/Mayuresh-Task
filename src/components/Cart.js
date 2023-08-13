@@ -41,7 +41,7 @@ function Cart({ cartArray, setCartArray }) {
     },[cartArray])
     return (
         <div>
-            <section className="h-100 gradient-custom">
+            {cartArray.length>0? <section className="h-100 gradient-custom">
                 <div className="container py-5">
                     <div className="row d-flex justify-content-center my-4">
                         <div className="col-md-8">
@@ -79,7 +79,6 @@ function Cart({ cartArray, setCartArray }) {
 
                                                         <div className="form-outline">
                                                             <span className='px-3'>{ele.quantity} </span>
-
                                                         </div>
 
                                                         <button className="btn btn-primary" onClick={() => handleIncrement(ele)} >
@@ -95,33 +94,6 @@ function Cart({ cartArray, setCartArray }) {
                                             <hr className="my-4" />
                                         </>
                                     })}
-
-
-
-
-                                </div>
-                            </div>
-                            <div className="card mb-4">
-                                <div className="card-body">
-                                    <p><strong>Expected shipping delivery</strong></p>
-                                    <p className="mb-0">12.10.2020 - 14.10.2020</p>
-                                </div>
-                            </div>
-                            <div className="card mb-4 mb-lg-0">
-                                <div className="card-body">
-                                    <p><strong>We accept</strong></p>
-                                    <img className="me-2" width="45px"
-                                        src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
-                                        alt="Visa" />
-                                    <img className="me-2" width="45px"
-                                        src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
-                                        alt="American Express" />
-                                    <img className="me-2" width="45px"
-                                        src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
-                                        alt="Mastercard" />
-                                    <img className="me-2" width="45px"
-                                        src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce/includes/gateways/paypal/assets/images/paypal.webp"
-                                        alt="PayPal acceptance mark" />
                                 </div>
                             </div>
                         </div>
@@ -161,7 +133,8 @@ function Cart({ cartArray, setCartArray }) {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section>:null}
+           
         </div>
     )
 }

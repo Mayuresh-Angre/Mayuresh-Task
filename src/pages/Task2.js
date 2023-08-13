@@ -48,9 +48,9 @@ function Task2() {
                     </div>
                     <div className="col-md-4 offset-2 form-group">
                         <label htmlFor="option">How should we contact you.</label>
-                        <select name="option" onClick={handleChange} className='form-control'required>
-                            <option value="phone">Phone</option>
-                            <option value="email">Email</option>
+                        <select name="option" onClick={handleChange} className='form-control' required>
+                            <option value="phone" required>Phone</option>
+                            <option value="email" required>Email</option>
                         </select>
                     </div>
                     {data.option === "phone" && <div className="col-md-4 offset-1 form-group">
